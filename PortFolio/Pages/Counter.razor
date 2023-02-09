@@ -1,12 +1,14 @@
 ﻿@page "/counter"
+<MudContainer MaxWidth="MaxWidth.Medium">
 
-<PageTitle>Counter</PageTitle>
+        <PageTitle>Counter</PageTitle>
 
-<h1>Counter</h1>
+        <h1>Counter</h1>
 
-<p role="status">Current count: @currentCount</p>
+        <p role="status">Current count: @currentCount</p>
+    <MudButton Class="mt-5" Variant="Variant.Outlined" Color="Color.Primary" OnClick="IncrementCount" >Count +1</MudButton>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+</MudContainer>
 
 @code {
     private int currentCount = 0;

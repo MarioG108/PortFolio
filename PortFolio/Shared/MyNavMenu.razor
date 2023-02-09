@@ -1,0 +1,35 @@
+﻿
+
+
+<MudDrawerContainer Class="mud-height-full">
+    <MudDrawer @bind-Open="@_drawerOpen" Fixed="true" Elevation="1" Variant="@DrawerVariant.Mini" OpenMiniOnHover="true">
+        <MudNavMenu Color="Color.Success">
+            <MudText Typo="Typo.h6" Class="px-4">Mario Gonzalez</MudText>
+            <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">Software Developer</MudText>
+            <MudText Typo="Typo.body1" Class="px-4 mud-text-secondary"></MudText>
+            <MudDivider Class="my-2" />
+            <MudNavLink Href="/" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Person4">About Me</MudNavLink>
+            <MudNavLink Href="/projects" Match="NavLinkMatch.Prefix" Icon="@Icons.Custom.Brands.GitHub">Projects</MudNavLink>
+                <MudNavLink Href="/counter" Match="NavLinkMatch.Prefix">counter</MudNavLink>
+            <MudNavGroup Title="Projects" Icon="@Icons.Material.Filled.ExitToApp" Expanded="true">
+                <MudNavLink Href="https://movieapp.mario-g.com" Target="project" Icon="@Icons.Material.Filled.Theaters" IconColor="Color.Dark">Movie Master</MudNavLink>
+            </MudNavGroup>
+            
+        </MudNavMenu>
+
+    </MudDrawer>
+    @* <MudAppBar Class="d-flex " Color="Color.Dark">
+    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+    Mario Gonzalez
+    </MudAppBar>*@
+</MudDrawerContainer>
+
+
+@code {
+    bool _drawerOpen = false;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}

@@ -1,17 +1,19 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+    <MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme" />
+    <MudDialogProvider />
+    <MudSnackbarProvider />
+    <MudLayout >
+        <MyNavMenu />
+        <MudContainer id="app-content" Class="px-8 mud-height-full" MaxWidth="MaxWidth.ExtraLarge">
+                @Body
+            </MudContainer>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+    </MudLayout>
 </div>
+
+@code {
+    private MudTheme _theme = new();
+    private bool _isDarkMode=true;
+}
